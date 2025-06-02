@@ -11,7 +11,7 @@ from transformers import AutoTokenizer, CLIPFeatureExtractor, AutoModel
 from transformers.models.auto.configuration_auto import AutoConfig
 from transformers.modeling_outputs import BaseModelOutput
 
-from src.utils import load_data_for_inference, prep_strings, postprocess_preds
+from src_new.utils import load_data_for_inference, prep_strings, postprocess_preds
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 
@@ -97,10 +97,10 @@ def infer_one_checkpoint(args, feature_extractor, tokenizer, checkpoint_path, ev
 
 def register_model_and_config():
     from transformers import AutoModelForCausalLM
-    from src.vision_encoder_decoder import SmallCap, SmallCapConfig
-    from src.gpt2 import ThisGPT2Config, ThisGPT2LMHeadModel
-    from src.opt import ThisOPTConfig, ThisOPTForCausalLM
-    from src.xglm import ThisXGLMConfig, ThisXGLMForCausalLM
+    from src_new.vision_encoder_decoder import SmallCap, SmallCapConfig
+    from src_new.gpt2 import ThisGPT2Config, ThisGPT2LMHeadModel
+    from src_new.opt import ThisOPTConfig, ThisOPTForCausalLM
+    from src_new.xglm import ThisXGLMConfig, ThisXGLMForCausalLM
 
     AutoConfig.register("this_xglm", ThisXGLMConfig)
     AutoModel.register(ThisXGLMConfig, ThisXGLMForCausalLM)

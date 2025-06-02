@@ -9,12 +9,12 @@ from transformers import AutoTokenizer, CLIPFeatureExtractor, AutoModel, AutoMod
 from transformers import Seq2SeqTrainer, default_data_collator, Seq2SeqTrainingArguments
 
 from transformers import VisionEncoderDecoderModel, CLIPModel, CLIPVisionModel,EncoderDecoderModel
-from src.vision_encoder_decoder import SmallCap, SmallCapConfig
-from src.gpt2 import ThisGPT2Config, ThisGPT2LMHeadModel
-from src.xglm import ThisXGLMConfig, ThisXGLMForCausalLM
-from src.opt import ThisOPTConfig, ThisOPTForCausalLM
+from src_new.vision_encoder_decoder import SmallCap, SmallCapConfig
+from src_new.gpt2 import ThisGPT2Config, ThisGPT2LMHeadModel
+from src_new.xglm import ThisXGLMConfig, ThisXGLMForCausalLM
+from src_new.opt import ThisOPTConfig, ThisOPTForCausalLM
 
-from src.utils import *
+from src_new.utils import *
 
 # for attention with 28M params, we devide the attention dimensions by 1
 # for attention with 14M params, we devide the attention dimensions by 2, etc.
@@ -159,7 +159,7 @@ if __name__ == '__main__':
 
     parser.add_argument("--encoder_name", type=str, default="openai/clip-vit-base-patch32", help="Encoder name as found of HuggingFace or stored locally")
     parser.add_argument("--decoder_name", type=str, default="gpt2", help="Decoder name as found of HuggingFace or stored locally")
-    parser.add_argument("--attention_size", type=float, default=7, help="Number of parameters in the cross attention {28, 14, 7, 3.5, 1.75}")
+    parser.add_argument("--attention_size", type=float, default=1.75, help="Number of parameters in the cross attention {28, 14, 7, 3.5, 1.75}")
     parser.add_argument("--train_decoder", action="store_true", default=False, help="Whether to train the decoder in addition to the attention")
 
     parser.add_argument("--disable_rag", action="store_true", default=False, help="Disable retrieval augmentation")

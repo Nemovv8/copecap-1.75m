@@ -127,3 +127,13 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+data/
+# coco-caption/
+datastore/
+experiments/
+features/
+features1028/
+*. json
+src/
+
