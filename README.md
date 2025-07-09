@@ -1,4 +1,4 @@
-# SmallCap
+# Copecap
 
 > We now have a demo, check it out: https://huggingface.co/spaces/RitaParadaRamos/SmallCapDemo :v:
 
